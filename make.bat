@@ -1,6 +1,8 @@
 @echo off
 set PATH=%PATH%%WIX%bin
 
+set
+
 echo ... wix heat
 set NodeModules=./node_modules
 heat dir ./node_modules -nologo -ag -cg modules -dr INSTALLLOCATION -var env.NodeModules -o modules.wxs
