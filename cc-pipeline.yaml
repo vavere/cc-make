@@ -17,5 +17,5 @@ jobs:
       inputs:
       - name: repo
       run:
-        path: repo/test.bat
+        path: repo/make.bat
       
