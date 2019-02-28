@@ -17,4 +17,10 @@ candle  -nologo -dbuild="%BUILD%" -arch x86 %PROJECT%.wxs %MODULES%.wxs
 echo ... wix light
 light -nologo -b .\ -cultures:lv-LV -dWixUILicenseRtf=licence.rtf -sice:ICE03 -sw1105 -sw1076 -spdb -ext WixUIExtension %PROJECT%.wixobj %MODULES%.wixobj -o %PROJECT%.msi
 
+echo ... copy to server
+copy %PROJECT%.msi \\s1.ma-1.lv\install\servers\MA-1 /y
+
+echo ... create repair
+echo msiexec /x {product-guid} /qb >\\s1.ma-1.lv\install\servers\MA-1\%PROJECT%_repair.cmd
+echo msiexec /i %%~dp0\%PROJECT%.msi /l*vx %%~dp0\%PROJECT%.log /qb >>\\s1.ma-1.lv\install\servers\MA-1\%PROJECT%_repair.cmd
 
