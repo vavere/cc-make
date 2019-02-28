@@ -1,0 +1,21 @@
+resources:
+- name: repo
+  type: git
+  check_every: 5m
+  source:
+    uri: https://github.com/vavere/cc-task
+
+jobs:
+- name: wix
+  serial: true
+  plan:
+  - get: repo
+    trigger: true
+  - task: do-wix
+    config:
+      platform: windows
+      inputs:
+      - name: repo
+      run:
+        path: repo/test.bat
+      
