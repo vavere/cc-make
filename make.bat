@@ -7,10 +7,9 @@ set BUILD=1
 
 cd repo
 
-set NodeModules=../node_modules
 echo ... wix heat
-heat dir ../node_modules -nologo -ag -cg modules -dr INSTALLLOCATION -var env.NodeModules -o %MODULES%.wx
-s
+heat dir node_modules -nologo -ag -cg modules -dr INSTALLLOCATION -var env.NodeModules -o %MODULES%.wx
+
 echo ... wix candle
 candle  -nologo -dbuild="%BUILD%" -arch x86 %PROJECT%.wxs %MODULES%.wxs
 
