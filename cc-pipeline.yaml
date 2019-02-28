@@ -1,7 +1,7 @@
 resources:
 - name: repo
   type: git
-  check_every: 5m
+  check_every: 3m
   source:
     uri: https://github.com/vavere/cc-task
 
