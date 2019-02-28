@@ -6,12 +6,12 @@ resources:
     uri: https://github.com/vavere/cc-task
 
 jobs:
-- name: wix
+- name: make
   serial: true
   plan:
   - get: repo
     trigger: true
-  - task: do-wix
+  - task: build
     config:
       platform: windows
       inputs:
