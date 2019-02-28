@@ -1,4 +1,4 @@
-rem @ECHO off
+@ECHO off
 set PATH=%PATH%%WIX%bin
 
 echo ... wix heat
