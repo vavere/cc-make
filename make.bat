@@ -1,23 +1,19 @@
 @echo off
 set PATH=%PATH%%WIX%bin
 
-set PROJECT=product
-set MODULES=modules
-set BUILD=1
-
 echo ... wix heat
 set NodeModules=./node_modules
-heat dir ./node_modules -nologo -ag -cg modules -dr INSTALLLOCATION -var env.NodeModules -o %MODULES%.wxs
+heat dir ./node_modules -nologo -ag -cg modules -dr INSTALLLOCATION -var env.NodeModules -o modules.wxs
 
 echo ... wix candle
-candle  -nologo -dbuild="%BUILD%" -arch x86 %PROJECT%.wxs %MODULES%.wxs
+candle -nologo -dbuild="%BUILD%" -dPID="%PID%"  -arch x86 %PNAME%.wxs modules.wxs
 
 echo ... wix light
-light -nologo -b .\ -cultures:lv-LV -sice:ICE03 -sw1105 -sw1076 -spdb -ext WixUIExtension %PROJECT%.wixobj %MODULES%.wixobj -o %PROJECT%.msi
+light -nologo -b .\ -cultures:lv-LV -sice:ICE03 -sw1105 -sw1076 -spdb -ext WixUIExtension %PNAME%.wixobj modules.wixobj -o %PNAME%.msi
 
 echo ... copy to server	
-copy %PROJECT%.msi \\s1.ma-1.lv\install\servers\MA-1 /y	
+copy %PNAME%.msi %DEPLOY% /y	
 
- echo ... create repair	
-echo msiexec /x {product-guid} /qb >\\s1.ma-1.lv\install\servers\MA-1\%PROJECT%_repair.cmd	
-echo msiexec /i %%~dp0\%PROJECT%.msi /l*vx %%~dp0\%PROJECT%.log /qb >>\\s1.ma-1.lv\install\servers\MA-1\%PROJECT%_repair.cmd
+echo ... create repair	
+echo msiexec /x {%PID%} /qb >%DEPLOY%\%PNAME%_repair.cmd	
+echo msiexec /i %%~dp0\%PNAME%.msi /l*vx %%~dp0\%PNAME%.log /qb >>%DEPLOY%\%PNAME%_repair.cmd

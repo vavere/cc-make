@@ -16,6 +16,11 @@ jobs:
       platform: windows
       inputs:
       - name: repo
+      params:
+        PID: product
+        PNAME: 72e712cb-3c01-44c5-b4a4-43e1524fc8f3
+        BUILD: 1
+        DEPLOY: \\\\s1.ma-1.lv\\install\\servers\\MA-1
       run:
         dir: repo
         path: make.bat
