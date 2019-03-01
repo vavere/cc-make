@@ -3,7 +3,7 @@ resources:
   type: git
   check_every: 3m
   source:
-    uri: https://github.com/vavere/cc-task
+    uri: https://github.com/vavere/cc-make
 
 jobs:
 - name: make
