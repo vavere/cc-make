@@ -20,7 +20,6 @@ jobs:
       - name: result
       params:
         PNAME: product
-        REPO: \\s1\install\servers\MA-1
         BUILD: 1
         OUTPUT: ..\result
       run:
@@ -35,7 +34,7 @@ jobs:
         path: cmd
         args:
         - /c
-        - copy result\*.msi \\s1\install\servers\MA-1\
+        - copy result\* \\s1\install\servers\MA-1\
   - task: deploy
     config:
       platform: windows
