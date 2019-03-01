@@ -22,7 +22,7 @@ jobs:
         PNAME: product
         PID: 72e712cb-3c01-44c5-b4a4-43e1524fc8f3
         BUILD: 1
-        DEPLOY: ..\result
+        OUTPUT: ..\result
       run:
         dir: repo
         path: make.bat
