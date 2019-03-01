@@ -26,16 +26,19 @@ jobs:
       run:
         dir: repo
         path: make.bat
-  - task: deploy
+  - task: deliver
     config:
       platform: windows
       inputs:
-      - name: repo
       - name: result
-      params:
-        PNAME: product
-        REPO: \\s1\install\servers\MA-1
-        TARGET: \\s1
+      run:
+        path: cmd
+        args:
+        - /c
+        - copy result\*.msi \\s1\install\servers\MA-1\
+  - task: deploy
+    config:
+      platform: windows
       run:
         path: psexec
         args:
