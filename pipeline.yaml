@@ -37,6 +37,14 @@ jobs:
         REPO: \\s1\install\servers\MA-1
         TARGET: \\s1
       run:
-        dir: repo
-        path: delpoy.bat
+        path: psexec
+        args:
+        - -accepteula
+        - -nobanner
+        - \\s1      
+        - -d 
+        - -s 
+        - cmd
+        - /c
+        - msiexec /i %REPO%\%PNAME%.msi /l*vx %REPO%\%PNAME%.log /qb
       

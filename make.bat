@@ -1,5 +1,5 @@
 @echo off
-set PATH=%PATH%%WIX%bin
+set PATH=%PATH%;%WIX%bin
 
 echo heat ...
 set NodeModules=./node_modules
