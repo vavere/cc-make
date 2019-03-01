@@ -20,7 +20,7 @@ jobs:
       - name: result
       params:
         PNAME: product
-        PID: 72e712cb-3c01-44c5-b4a4-43e1524fc8f3
+        REPO: \\s1\install\servers\MA-1
         BUILD: 1
         OUTPUT: ..\result
       run:
@@ -30,11 +30,13 @@ jobs:
     config:
       platform: windows
       inputs:
+      - name: repo
       - name: result
+      params:
+        PNAME: product
+        REPO: \\s1\install\servers\MA-1
+        TARGET: \\s1
       run:
-        dir: result
-        path: cmd
-        args:
-        - /c
-        - dir
+        dir: repo
+        path: delpoy.bat
       
