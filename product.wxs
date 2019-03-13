@@ -9,6 +9,10 @@
 			 Manufacturer="software architects"
 			 UpgradeCode="58FB0E6C-94EF-4AFB-A067-A6DA6B17E10F">
 
+  <MajorUpgrade AllowDowngrades="no" 
+          DowngradeErrorMessage="!(loc.NewerVersionInstalled)"
+          AllowSameVersionUpgrades="yes" />
+
 		<Package Compressed="yes"
 				 InstallScope="perMachine"
 				 Manufacturer="software architects"
