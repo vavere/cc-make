@@ -9,15 +9,15 @@
 			 Manufacturer="software architects"
 			 UpgradeCode="58FB0E6C-94EF-4AFB-A067-A6DA6B17E10F">
 
-  <MajorUpgrade AllowDowngrades="no" 
-          DowngradeErrorMessage="!(loc.NewerVersionInstalled)"
-          AllowSameVersionUpgrades="yes" />
-
 		<Package Compressed="yes"
 				 InstallScope="perMachine"
 				 Manufacturer="software architects"
 				 Description="Demo installer for learning WiX basics."
 				 Comments="(c) 2012 software architects" />
+
+    <MajorUpgrade AllowDowngrades="no" 
+          DowngradeErrorMessage="!(loc.NewerVersionInstalled)"
+          AllowSameVersionUpgrades="yes" />
 
 		<MediaTemplate EmbedCab="yes" />
 
