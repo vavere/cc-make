@@ -16,7 +16,7 @@
 				 Comments="(c) 2012 software architects" />
 
     <MajorUpgrade AllowDowngrades="no" 
-          DowngradeErrorMessage="!(loc.NewerVersionInstalled)"
+          DowngradeErrorMessage="No downgrades!"
           AllowSameVersionUpgrades="yes" />
 
 		<MediaTemplate EmbedCab="yes" />
