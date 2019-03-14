@@ -5,7 +5,7 @@
   <Product Id="b6000580-00c4-4959-af59-ae8e04990b61"
 			 Name="WiX Basics"
 			 Language="1033"
-			 Version="1.0.1.0"
+			 Version="1.0.2.0"
 			 Manufacturer="software architects"
 			 UpgradeCode="58FB0E6C-94EF-4AFB-A067-A6DA6B17E10F">
 
