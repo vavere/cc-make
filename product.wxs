@@ -2,7 +2,7 @@
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 
 	<!-- Use * to generate product ID on every build -->
-  <Product Id="b6000580-00c4-4959-af59-ae8e04990b61"
+  <Product Id="*"
 			 Name="WiX Basics"
 			 Language="1033"
 			 Version="1.1.0.0"
